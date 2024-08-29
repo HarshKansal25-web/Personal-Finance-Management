@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reports</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="reports.css"> <!-- Link to the new CSS file -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Personal Finance Tracker - Reports</h1>
+    <nav>
+      <a href="./index.html">Home</a>
+      <li><a href="./savings.html">Savings</a></li>
+      <a href="./reports.html">Reports</a>
+      <a href="./sign-up.html">Sign Up</a>
+    </nav>
+  </header>
+  <div class="container">
+    <h2>Monthly Expenses</h2>
+    <canvas id="barChart" width="400" height="200"></canvas>
+
+    <h2>Income vs. Expenses</h2>
+    <canvas id="pieChart" width="400" height="200"></canvas>
+
+    <h2>Savings Over Time</h2>
+    <canvas id="lineChart" width="400" height="200"></canvas>
+  </div>
+  <footer>
+    <div class="footer">
+      <ul>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </div>
+  </footer>
+  <script src="reports.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="reports.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
