@@ -2,7 +2,7 @@
 
 The Personal Finance Manager is a system designed to assist users in tracking their income, expenses, and savings goals. This system enables users to add, view, update, and delete financial transactions, categorize them, and generate insightful reports to analyze their spending habits.
 
-<img src="./assets/img5.png" alt="Power Finance" />
+<img src=""C:\Users\Lenovo\Desktop\Finance Manager Project\Personal-Finance-Manager\assets\img5.png"" alt="Power Finance" />
 
 ## Features
 
