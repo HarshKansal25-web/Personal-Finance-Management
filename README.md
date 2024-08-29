@@ -4,7 +4,6 @@ The Personal Finance Manager is a system designed to assist users in tracking th
 
 ## Features
 
-## Features
 - **Track Transactions**: Add, view, update, and delete financial transactions.
 - **Manage Categories**: Create and manage custom categories for your transactions.
 - **Set Savings Goals**: Define savings goals and track progress towards achieving them.
