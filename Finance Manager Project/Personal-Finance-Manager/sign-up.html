@@ -10,62 +10,50 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.css">
   <script src="https://unpkg.com/feather-icons"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <title>Finance Tracker - A Personal Finance App</title>
+  <title>Finance Tracker - Sign Up</title>
 </head>   
 
 <body>
-  <!-- <header class="header-part"> -->
-    <nav>
-      <div class="navbar">
-        <a href="#" class="logo"><i class="fas fa-chart-line"></i> Finance Tracker</a>
-        <ul class="nav-links">
-          <li><a href="./savings.html">Savings</a></li>
-          <li><a href="./reports.html">Reports</a></li>
-          <li><a href="./index.html">Home</a></li>
-          <!-- <li><a href="">Use Tracker</a></li> -->
-          <!-- <li><a href="#how-it-works">How it works</a></li>
-          <li><a href="#">Support</a></li> -->
-        </ul>
-        <div class="buttons">
-          <a href="https://finance542.netlify.app/" class="btn-head"><i class="fas fa-sign-in-alt"></i> Log In</a>
-          
-        </div>
-        <!-- <div class="menu-toggle">
-            <i class="fas fa-bars"></i>
-        </div> -->
+  <nav>
+    <div class="navbar">
+      <a href="#" class="logo"><i class="fas fa-chart-line"></i> Finance Tracker</a>
+      <ul class="nav-links">
+        <li><a href="./savings.html">Savings</a></li>
+        <li><a href="./reports.html">Reports</a></li>
+        <li><a href="./index.html">Home</a></li>
+      </ul>
+      <div class="buttons">
+        <a href="https://finance542.netlify.app/" class="btn-head"><i class="fas fa-sign-in-alt"></i> Log In</a>
       </div>
-    </nav>
+    </div>
+  </nav>
 
-    <div class="container">
-        <form class="signup-form" action="https://finance542.netlify.app/" method="post">
-          <h2>Sign Up</h2>
-          <div class="form-group">
-            <label for="fullname">Full Name <span>*</span></label>
-            <input type="text" id="fullname" name="fullname" required>
-          </div>
-          <div class="form-group">
-            <label for="email">Email Address <span>*</span></label>
-            <input type="email" id="email" name="email" required>
-          </div>
-          <div class="form-group">
-            <label for="mobile">Mobile Number <span>*</span></label>
-            <input type="tel" id="mobile" name="mobile" required>
-          </div>
-          <!-- <div class="form-group">
-            <label for="username">Username</label>
-            <input type="text" id="username" name="username" required>
-          </div> -->
-          <div class="form-group">
-            <label for="password">Password </label>
-            <input type="password" id="password" name="password" required>
-          </div>
-          <div class="form-group">
-            <label for="confirm-password">Confirm Password <span>*</span></label>
-            <input type="password" id="confirm-password" name="confirm-password" required>
-          </div>
-          <button type="submit">Submit</button>
-        </form>
+  <div class="container">
+    <form class="signup-form" id="signup-form">
+      <h2>Sign Up</h2>
+      <div class="form-group">
+        <label for="fullname">Full Name <span>*</span></label>
+        <input type="text" id="fullname" name="fullname" required>
       </div>
+      <div class="form-group">
+        <label for="email">Email Address <span>*</span></label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="mobile">Mobile Number <span>*</span></label>
+        <input type="tel" id="mobile" name="mobile" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password </label>
+        <input type="password" id="password" name="password" required>
+      </div>
+      <div class="form-group">
+        <label for="confirm-password">Confirm Password <span>*</span></label>
+        <input type="password" id="confirm-password" name="confirm-password" required>
+      </div>
+      <button type="button" id="submit-btn">Submit</button>
+    </form>
+  </div>
 
   <footer>
     <div class="footer">
@@ -79,6 +67,11 @@
   <script>feather.replace();</script>
   <script src="script.js"></script>
   <script src="https://kit.fontawesome.com/your-font-awesome-kit.js" crossorigin="anonymous"></script>
+  <script>
+    document.getElementById('submit-btn').addEventListener('click', function() {
+      window.location.href = 'index.html';
+    });
+  </script>
 </body>
 
 </html>
