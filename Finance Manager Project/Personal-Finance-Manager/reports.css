@@ -1,85 +1,56 @@
-/* reports.css */
-
 body {
     font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
     background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-}
-
-header {
-    background: #333;
-    color: #fff;
-    padding: 10px 0;
-    text-align: center;
-}
-
-nav .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-}
-
-nav .nav-links {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-}
-
-nav .nav-links li {
-    margin: 0 10px;
-}
-
-nav .nav-links a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 16px;
-}
-
-nav .buttons a {
-    color: #fff;
-    background-color: #007bff;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
 }
 
 .container {
-    max-width: 1200px;
-    margin: 20px auto;
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
     padding: 20px;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+.chart-container {
     background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    padding: 20px;
 }
 
-canvas {
-    display: block;
-    margin: 0 auto;
-    max-width: 100%;
+.summary-container {
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 20px;
 }
 
-footer {
-    background: #333;
-    color: #fff;
-    padding: 10px 0;
-    text-align: center;
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
 }
 
-footer ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+.summary-item {
+    background-color: #f0f0f0;
+    padding: 15px;
+    border-radius: 5px;
 }
 
-footer ul li {
-    display: inline;
-    margin: 0 10px;
+.summary-item h3 {
+    margin-top: 0;
+    color: #333;
 }
 
-footer ul li a {
-    color: #fff;
-    text-decoration: none;
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
 }
