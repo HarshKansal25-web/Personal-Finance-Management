@@ -9,6 +9,33 @@ The Personal Finance Manager is a system designed to assist users in tracking th
 - **Set Savings Goals**: Define savings goals and track progress towards achieving them.
 - **Generate Reports**: View monthly and yearly reports with visualizations to analyze spending patterns.
 
+## Project Structure Overview
+
+- HTML Files:
+
+index.html: The main dashboard, likely displays an overview of the user's financial status, including summaries of income, expenses, and balance.
+login.html: Handles user login, allowing access to the main features after authentication.
+sign-up.html: Used for new users to create an account.
+reports.html: Displays various financial reports through charts and graphs, helping users analyze their spending and income patterns.
+savings.html: Manages savings goals, showing progress and allowing users to set or remove goals.
+support.html: Provides support or FAQs for users needing assistance with the application.
+
+- JavaScript Files:
+
+script.js: Likely handles core functionalities and interactions across the application, possibly linked to index.html.
+reports.js: Specifically manages the functionality of the reports page, including chart updates and data processing.
+savings.js: Manages the logic related to savings goals, such as adding or removing goals.
+
+- CSS Files:
+
+style.css: The main stylesheet for consistent styling across pages.
+login.css, sign-up.css, reports.css, savings.css, support.css: Page-specific stylesheets for tailored designs on each corresponding HTML page.
+Other Files:
+
+README.md: Likely contains project documentation, explaining what the project does, how to set it up, and how to use it.
+Jenkinsfile: Used for CI/CD (Continuous Integration/Continuous Deployment), automating tasks like testing and deployment.
+This structure organizes the project so that each feature or page of the application has its dedicated files, making the development and maintenance process more manageable.
+
 
 ## Getting Started
 
