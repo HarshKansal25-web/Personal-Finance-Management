@@ -30,6 +30,19 @@ savings.js: Manages the logic related to savings goals, such as adding or removi
 
 style.css: The main stylesheet for consistent styling across pages.
 login.css, sign-up.css, reports.css, savings.css, support.css: Page-specific stylesheets for tailored designs on each corresponding HTML page.
+
+- SQL Database:
+
+Schema: Defines the structure of the database tables, such as:
+transactions: Stores transaction details (e.g., date, amount, type, description).
+savings_goals: Manages savings goals with details like target amount and progress.
+
+Queries: Used to interact with the database, such as:
+Inserts: Adding new transactions or savings goals.
+Updates: Modifying existing records, such as updating transaction details or savings progress.
+Selects: Fetching data for display in reports or summaries.
+Deletes: Removing outdated transactions or savings goals.
+
 Other Files:
 
 README.md: Likely contains project documentation, explaining what the project does, how to set it up, and how to use it.
