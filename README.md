@@ -39,7 +39,7 @@ The Personal Finance Manager is a system designed to assist users in tracking th
    - Navigate to the **Transactions** page.
    - View a list of all your transactions.
    - You can update or delete any transaction by selecting the appropriate option next to it.
-   - Navigate to reports page by opening it in another tab to view transactions and reports simuntaneously.
+   - Navigate to reports page by opening it in another tab to view transactions and reports simultaneously.
 
 3. **Managing Categories**
 
