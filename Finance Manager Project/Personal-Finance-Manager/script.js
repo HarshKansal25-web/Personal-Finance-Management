@@ -6,6 +6,8 @@
 //   targetElement.scrollIntoView({ behavior: 'smooth' });
 // });
 
+
+
 // Get the table-part element and the transaction-table
 const tablePart = document.querySelector(".table-part");
 const transactionTable = document.getElementById("transaction-table");
@@ -33,7 +35,9 @@ observer.observe(transactionTable, {
 });
 
 // Initialize an empty array to store the transactions
-let transactions = [];
+let transactions = JSON.parse(localStorage.getItem('transactions')) || [];
+
+
 
 // Variable to store the current transaction being edited
 let editedTransaction = null;
@@ -70,14 +74,20 @@ function addTransaction() {
     type: type,
   };
 
+
+
   // Add the transaction to the array
   transactions.push(transaction);
-
-  // Update the balance
+  localStorage.setItem('transactions', JSON.stringify(transactions));
   updateBalance();
 
   // Update the transaction table
   updateTransactionTable();
+
+  
+
+  // Update the balance
+ 
   updateCharts();
 }
 
@@ -93,11 +103,16 @@ function deleteTransaction(primeId) {
     transactions.splice(index, 1);
   }
 
+  localStorage.setItem('transactions', JSON.stringify(transactions));
+
+
+
   // Update the balance
   updateBalance();
 
   // Update the transaction table
   updateTransactionTable();
+
   updateCharts();
 }
 
@@ -153,6 +168,18 @@ function saveTransaction() {
   editedTransaction.amount = amount;
   editedTransaction.type = type;
   editedTransaction.primeId = chosenDate.getTime();
+
+  transactions = JSON.parse(localStorage.getItem('transactions')) || [];
+
+  // Find the transaction in the array and update it
+  const index = transactions.findIndex(t => t.primeId === editedTransaction.primeId);
+  if (index !== -1) {
+    transactions[index] = editedTransaction;
+  }
+
+  // Store the updated transactions back to localStorage
+  localStorage.setItem('transactions', JSON.stringify(transactions));
+
 
   // Clear the input fields
   descriptionInput.value = "";
@@ -276,6 +303,8 @@ function calculateSavingsOverTime() {
 }
 
 window.addEventListener("DOMContentLoaded", () => {
+
+  transactions = JSON.parse(localStorage.getItem('transactions')) || [];
   // Set initial balance value
   let balance = 0.0;
   updateBalance(balance); // Update the balance display
@@ -473,3 +502,4 @@ function exportToCSV() {
   link.download = "transactions.csv";
   link.click();
 }
+
