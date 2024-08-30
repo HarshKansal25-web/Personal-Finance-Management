@@ -32,12 +32,14 @@ The Personal Finance Manager is a system designed to assist users in tracking th
    - Click on the **Add Transaction** button.
    - Enter details such as the amount, date, category, and a description of the transaction.
    - Click **Save** to add the transaction to your records.
+   - Export them to PDF or CSV file for record purposes.
 
 2. **Viewing and Managing Transactions**
 
    - Navigate to the **Transactions** page.
    - View a list of all your transactions.
    - You can update or delete any transaction by selecting the appropriate option next to it.
+   - Navigate to reports page by opening it in another tab to view transactions and reports simuntaneously.
 
 3. **Managing Categories**
 
