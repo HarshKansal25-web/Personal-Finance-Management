@@ -3,7 +3,7 @@
     max-width: 1200px;
     margin: 20px auto;
     padding: 20px;
-    background: #ed0909;
+    background: #ffffff;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
@@ -55,4 +55,20 @@ ul li {
     margin: 5px 0;
     padding: 10px;
     border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+ul li button {
+    background-color: #dc3545;
+    margin-left: 10px;
+}
+
+ul li button:hover {
+    background-color: #c82333;
+}
+
+#savingsChart {
+    margin-bottom: 30px;
 }
