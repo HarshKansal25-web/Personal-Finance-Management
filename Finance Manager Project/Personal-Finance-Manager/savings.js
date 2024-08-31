@@ -1,41 +1,48 @@
-// savings.js
+// Initialize the chart
+let savingsChart;
 
-// Savings Chart
-const savingsCtx = document.getElementById('savingsChart').getContext('2d');
-const savingsChart = new Chart(savingsCtx, {
-    type: 'bar',
-    data: {
-        labels: ['January', 'February', 'March', 'April', 'May', 'June'],
-        datasets: [{
-            label: 'Savings Over Time',
-            data: [200, 400, 600, 800, 1000, 1200],
-            backgroundColor: [
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)',
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)'
-            ],
-            borderColor: [
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)',
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)'
-            ],
-            borderWidth: 1
-        }]
-    },
-    options: {
-        scales: {
-            y: {
-                beginAtZero: true
+function initChart() {
+    const ctx = document.getElementById('savingsChart').getContext('2d');
+    savingsChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: [],
+            datasets: [{
+                label: 'Savings Goals',
+                data: [],
+                borderColor: 'rgb(75, 192, 192)',
+                tension: 0.1
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'Amount ($)'
+                    }
+                },
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Deadline'
+                    }
+                }
             }
         }
-    }
-});
+    });
+}
+
+function updateChart() {
+    const savedGoals = JSON.parse(localStorage.getItem('savingsGoals')) || [];
+    const sortedGoals = savedGoals.sort((a, b) => new Date(a.deadline) - new Date(b.deadline));
+
+    savingsChart.data.labels = sortedGoals.map(goal => goal.deadline);
+    savingsChart.data.datasets[0].data = sortedGoals.map(goal => goal.amount);
+    savingsChart.update();
+}
 
 function loadSavingsGoals() {
     const goalsList = document.getElementById('goalsList');
@@ -54,6 +61,8 @@ function loadSavingsGoals() {
         
         goalsList.appendChild(li);
     });
+
+    updateChart();
 }
 
 // Remove a savings goal
@@ -61,24 +70,27 @@ function removeGoal(index) {
     let savedGoals = JSON.parse(localStorage.getItem('savingsGoals')) || [];
     savedGoals.splice(index, 1);
     localStorage.setItem('savingsGoals', JSON.stringify(savedGoals));
-    loadSavingsGoals(); // Reload the goals list
+    loadSavingsGoals();
 }
 
 // Remove all savings goals
 function removeAllGoals() {
     localStorage.removeItem('savingsGoals');
-    loadSavingsGoals(); // Reload the goals list
+    loadSavingsGoals();
 }
 
-// Load goals when the page loads
-document.addEventListener('DOMContentLoaded', loadSavingsGoals);
+// Initialize chart and load goals when the page loads
+document.addEventListener('DOMContentLoaded', () => {
+    initChart();
+    loadSavingsGoals();
+});
 
 // Handle form submission
 document.getElementById('savingsForm').addEventListener('submit', (event) => {
     event.preventDefault();
 
     const goalName = document.getElementById('goalName').value;
-    const goalAmount = document.getElementById('goalAmount').value;
+    const goalAmount = parseFloat(document.getElementById('goalAmount').value);
     const goalDeadline = document.getElementById('goalDeadline').value;
 
     const newGoal = {
@@ -91,9 +103,6 @@ document.getElementById('savingsForm').addEventListener('submit', (event) => {
     savedGoals.push(newGoal);
     localStorage.setItem('savingsGoals', JSON.stringify(savedGoals));
 
-    const li = document.createElement('li');
-    li.textContent = `${goalName} - $${goalAmount} by ${goalDeadline}`;
-    document.getElementById('goalsList').appendChild(li);
-
+    loadSavingsGoals();
     document.getElementById('savingsForm').reset();
 });
