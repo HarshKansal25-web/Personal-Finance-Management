@@ -31,7 +31,7 @@ savings.js: Manages the logic related to savings goals, such as adding or removi
 style.css: The main stylesheet for consistent styling across pages.
 login.css, sign-up.css, reports.css, savings.css, support.css: Page-specific stylesheets for tailored designs on each corresponding HTML page.
 
-- SQL Database:
+- Database:
 
 Schema: Defines the structure of the database tables, such as:
 transactions: Stores transaction details (e.g., date, amount, type, description).
